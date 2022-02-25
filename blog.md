@@ -1,15 +1,14 @@
-In this blog article we will create an endpoint with sports and we will perform GET requests to get the data. 
+In this tutorial you are going to build an API using Python and Falcon.
 
-We are going to use Falcon, an open-source framework which is designed to build APIs and follows the REST architecture style. 
+[Falcon](https://falcon.readthedocs.io/en/stable/) is an open-source framework which is designed to build APIs and follows the REST architecture style. 
 
-Prerequisites
-- Python
-- Falcon
-- gunicorn: as a WSGI server in order to serve a Falcon app
-- virtualenv
+### Prerequisites
+- Python 3
+- [virtualenv](https://virtualenv.pypa.io/en/latest/) to build your virtual environment
 
-Step 1: Create your environment 
+### Step 1: Create your environment 
 In your working directory, create a virtual environment to install and manage your dependencies.  
+
 ```
 $ virtualenv venv 
 $ source venv/bin/activate 
@@ -21,10 +20,11 @@ pip install falcon
 pip install gunicorn
 ```
 
-Step 2: 
-Create a Python file sports.py 
-In this file you will create a list of sports. The on_get() function handles the GET requests. 
-As you can see, Resoirces are represented by class instances, in this case SportsResource. 
+You will use gunicorn as a WSGI server to serve the Falcon app.
+
+Step 2: Build the API 
+
+Now that you've setup your environment you are able to write the necessary code to build your API. Create the file `sports.py` and add the following code:
 
 ```
 import falcon
@@ -45,6 +45,9 @@ class SportsResource:
 app = falcon.App()
 app.add_route('/sports', SportsResource())
 ```
+
+The `on_get()` function handles the GET requests. 
+As you can see, `Resources` are represented by class instances, in this case SportsResource.
 
 the resp.body = convert to json with dumps and when we call the endpoint we return the result 
 
