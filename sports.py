@@ -2,7 +2,7 @@ import falcon
 import json 
 
 class SportsResource:
-    def on_get(self, resp):
+    def on_get(self, req, resp):
         sports = [
                 {'id': 1, 'name': 'football', 'players': '22', 'first_played': 'england'}, 
                 {'id': 2, 'name': 'tennis', 'players': '2', 'first_played': 'england'},
