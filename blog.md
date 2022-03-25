@@ -59,3 +59,21 @@ gunicorn sports:app
 Then check out the results at http://localhost:8000/sports
 
 Add screenshot 
+
+### Search by query parameters
+
+id 1
+difficulty easy
+
+Both the query string and the parsed query string (as a dict) are available on the Request object that falcon passes to your API endpoint.
+On your on_get method you can do: print(req.query_string)
+
+and you can access the dict as:
+        for key, value in req.params.items():
+            print (key, value)
+
+Example:
+http://localhost:8000/sports?id=1&difficulty=easy
+id=1&difficulty=easy
+id 1
+difficulty easy
