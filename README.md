@@ -47,5 +47,6 @@ gunicorn falcon_flights:app
 
 How to call the `fastapi_flights.py`:
 
-```uvicorn fastapi_flights:app
+```
+uvicorn fastapi_flights:app
 ```
