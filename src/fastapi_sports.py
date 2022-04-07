@@ -17,3 +17,4 @@ sports = [
 @app.get("/sports/")
 async def read_item(id: int, players: int):
     return sports
+    

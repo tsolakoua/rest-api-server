@@ -20,6 +20,3 @@ class FlightOffers:
 
 app = falcon.App()
 app.add_route('/search/flights', FlightOffers())
-
-    
-

@@ -17,3 +17,4 @@ async def root():
     max=1)
 
     return {"data": response.data}
+    
