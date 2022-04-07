@@ -1,6 +1,9 @@
 import falcon
 import json 
 
+# gunicorn falcon_sports:app
+# http://127.0.0.1:8000/sports
+
 class SportsResource:
     def on_get(self, req, resp):
         sports = [
@@ -14,4 +17,3 @@ class SportsResource:
         print(resp.status)
 app = falcon.App()
 app.add_route('/sports', SportsResource())
-app.add_route('/sports?id=1', {'id': 1, 'name': 'football', 'players': '22', 'first_played': 'england'})
